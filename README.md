@@ -1,12 +1,16 @@
-# cr-comp
+# cr-xian
 
-react component
+react component based on antV, for table data visualization
+
+表格数据可视化为弦图
 
 
-## Usage
+## Example
+<img src='./github/example.png' alt='example' />
 
+Usage
 ```jsx
-use cr-comp create your react component
+cnpm install --save cr-xian
 ```
 
 ## API
@@ -20,7 +24,7 @@ npm start
 
 ## Example
 
-http://localhost:8018/examples/index.md
+http://localhost:8018/examples/testOne.html
 
 ## Test
   ```js
@@ -33,4 +37,4 @@ http://localhost:8018/examples/index.md
 
 ## License
 
-cr-comp is released under the MIT license.
+MIT
