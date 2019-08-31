@@ -8,7 +8,6 @@ class AppChart extends PureComponent {
 
   state = {
     dvForAll: [],
-    ds: {},
   }
 
   componentDidMount () {
@@ -21,8 +20,6 @@ class AppChart extends PureComponent {
         currentState: '华南'
       }
     })
-    this.ds = ds;
-
     axios.get('//39.107.35.212/csv/population-by-age.csv')
       .then(response => {
         const dvForAll = ds.createView('stateTest')
@@ -30,6 +27,35 @@ class AppChart extends PureComponent {
             type: 'csv',
           })
 
+        dvForAll.transform({
+          type: 'map',
+          callback(row) {
+            row['小明'] = Number(row['小明'])
+            row['张三'] = Number(row['张三'])
+            row['李四'] = Number(row['李四'])
+
+            return row
+          }
+        })
+
+        dvForAll.transform({
+          type: 'percent',
+          fields: '小明',
+          dimension: 'state',
+          as: 'percent-小明',
+        })
+        // dvForAll.transform({
+        //   type: 'percent',
+        //   fields: ['张三'],
+        //   dimension: 'state',
+        //   as: 'percent-张三',
+        // })        
+        // dvForAll.transform({
+        //   type: 'percent',
+        //   fields: ['李四'],
+        //   dimension: 'state',
+        //   as: 'percent-李四',
+        // })
         dvForAll.transform({
           type: 'fold',
           fields: ['张三', '李四', '小明'],
@@ -40,15 +66,12 @@ class AppChart extends PureComponent {
 
         this.setState({
           dvForAll,
-          ds,
         })
       })
 
   }
 
   render () {
-    // const { data } = this.props
-   
     return (
       <div>
         <Chart

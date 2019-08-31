@@ -12,6 +12,7 @@ class SChart extends PureComponent {
       edges: d => d.links,
       nodes: d => d.nodes,
     });
+    
 
     dv.transform({
       type: "diagram.arc",
@@ -21,6 +22,7 @@ class SChart extends PureComponent {
       marginRatio: 0.3,
       thickness: 0.1,
     });
+
     const scale = {
       x: {
         sync: true
@@ -28,16 +30,19 @@ class SChart extends PureComponent {
       y: {
         sync: true
       }
-    };       
+    };
+    
+    const { width, height, padding, outTitle, innerTitle } = this.props
+    console.log('out---', outTitle, 'inner----', innerTitle)
 
     return (
       <div>
         <Chart
           data={data}
-          height={550}
-          width={550}
+          height={height}
+          width={width}
           scale={scale}
-          padding={[70, 50, 70, 50]}
+          padding={padding}
         >
           <Tooltip 
             showTitle={true} 
@@ -59,7 +64,7 @@ class SChart extends PureComponent {
               }]}
               tooltip={["lineX*lineY*sourceWeight", (lineX, lineY, sourceWeight) => {
                 return {
-                  title: `小微税优模型`,
+                  title: `${outTitle}`,
                   name: `${lineY}-${lineX}：`,
                   value: `${sourceWeight}`
                 }
@@ -72,8 +77,20 @@ class SChart extends PureComponent {
               type="polygon" 
               position="x*y" 
               color="id"
-              tooltip={false}
-              active={true}
+              tooltip={["name*sum*percent", (name, sum, percent) => {
+                return {
+                  title: `${innerTitle}`,
+                  name: `${name}：`,
+                  value: `合计: ${sum} 百分比: ${percent}`
+                }
+              }]}
+              active={[true, { 
+                highlight: true,
+                style: {
+                  fill: 'red'
+                } 
+              }]}
+
             >
               <Label
                 content="name"

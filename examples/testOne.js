@@ -27,7 +27,7 @@ const dataSource = [
     address: '华南',
     zhangsan: '63',
     lisi: '51',
-    xiaoming: '13',
+    xiaoming: '130',
   }
 ];
 
@@ -53,7 +53,7 @@ const columns = [
 
 const HHeader = ['张三', '李四', '小明']
 const VHeader = ['华北', '华南']
-const TData = [[20, 18, 42], [63, 51, 13]]
+const TData = [[20, 18, 42], [63, 51, 130]]
 
 function render(container) {
   ReactDOM.render(
@@ -62,7 +62,14 @@ function render(container) {
       <div style={{lineHeight: '40px'}}>表格可视化为弦图</div>
       <Table dataSource={dataSource} columns={columns} pagination={false} />
       <div style={{lineHeight: '40px'}}>将表格转化为弦图</div>
-      <Testone HHeader={HHeader} VHeader={VHeader} TData={TData} />
+      <div style={{width: 800, height: 800, margin: '0 auto'}}>
+        <Testone 
+          HHeader={HHeader} VHeader={VHeader} TData={TData}
+          width={500}
+          height={500}
+        />
+      </div>
+
     </div>, container
   )
 }
