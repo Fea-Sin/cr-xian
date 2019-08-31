@@ -6,7 +6,7 @@ react component based on antV, for table data visualization
 
 
 ## Example
-<img src='./github/example1.png' alt='example' />
+<img src='./github/example2.png' alt='example' />
 
 ## Usage
 ```jsx
