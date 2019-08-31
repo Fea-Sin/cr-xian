@@ -8,7 +8,7 @@ react component based on antV, for table data visualization
 ## Example
 <img src='./github/example.png' alt='example' />
 
-Usage
+## Usage
 ```jsx
 cnpm install --save cr-xian
 ```
