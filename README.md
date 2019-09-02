@@ -41,9 +41,9 @@ export default class App extends PureComponent {
 ## 💡 Api
 name | type | description
 -----| -----| ------------
-HHeader | array | 表头数组
-VHeader | array | 列表头数组
-TData | array | 表格主数据
+HHeader | array（必填） | 表头数组
+VHeader | array（必填） | 列表头数组
+TData | array（必填） | 表格主数据
 width | number | 弦图宽度
 height | number | 弦图高度
 padding | array （例: [70, 50, 70, 50]）| 弦图内边距
