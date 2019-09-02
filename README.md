@@ -16,7 +16,7 @@ npm install --save cr-xian
 ```
 
 ## 🔨 Usage
-<img src='./github/data-example.png' width='300px' alt='example' />
+<img src='./github/data-example.png' width='450px' alt='example' />
 
 ```js
 import React, { PureComponent } from 'react';
