@@ -22,10 +22,28 @@ npm install --save cr-xian
 import React, { PureComponent } from 'react';
 import Xian from 'cr-xian';
 
+const HHeader = ['张三', '李四', '小明']
+const VHeader = ['华北', '华南']
+const TData = [[20, 18, 42], [63, 51, 130]]
+
+export default class App extends PureComponent {
+
+  render () {
+    return (
+      <div>
+        <Xian HHeader={HHeader} VHeader={VHeader} TData={TData}  />
+      </div>
+    )
+  }
+}
 ```
 
 ## 💡 Api
-
+name | type | description
+-----| -----| ------------
+HHeader | array | 表头数组
+VHeader | array | 列表头数组
+TData | array | 表格主数据
 
 ##  Development
 
