@@ -70,8 +70,8 @@ npm test
 
 npm run coverage
 ```
-
-
+## 🏁 Changelog
+在 [HISTORY.md](./HISTORY.md) 中查看更新记录
 
 ## License
 
