@@ -114,9 +114,9 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  HHeader: PropTypes.array,
-  VHeader: PropTypes.array,
-  TData: PropTypes.arrayOf(PropTypes.array),
+  HHeader: PropTypes.array.isRequired,
+  VHeader: PropTypes.array.isRequired,
+  TData: PropTypes.arrayOf(PropTypes.array).isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
   padding: PropTypes.arrayOf(PropTypes.number),
