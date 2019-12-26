@@ -6,7 +6,7 @@ react component based on antV, for table data visualization
 
 
 ## ✨ Example View
-<img src='./github/example2.png' alt='example' />
+<img src='http://39.107.35.212/images/cr-xian/example2.png' alt='example' />
 
 ##  📦 Installation
 ```jsx
@@ -16,7 +16,7 @@ npm install --save cr-xian
 ```
 
 ## 🔨 Usage
-<img src='./github/data-example.png' width='450px' alt='example' />
+<img src='http://39.107.35.212/images/cr-xian/data-example.png' width='450px' alt='example' />
 
 ```js
 import React, { PureComponent } from 'react';
